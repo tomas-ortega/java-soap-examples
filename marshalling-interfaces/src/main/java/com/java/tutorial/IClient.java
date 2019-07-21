@@ -1,5 +1,7 @@
 package com.java.tutorial;
 
+import com.java.tutorial.ClientDTO;
+
 /**
  * Hello world!
  *
