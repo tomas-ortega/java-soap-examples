@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="studentNameType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="Pako|Juanito"/>
+        </xs:restriction>
+    </xs:simpleType>
+  
+<xs:element name="ClientDTO">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="id" type="xs:string" minOccurs='1' maxOccurs='1' />
+            <xs:element name="name" type="studentNameType" minOccurs='1' maxOccurs='1'/>
+            <xs:element name="registerDate" type="xs:string" minOccurs='1' maxOccurs='1'/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+</xs:schema>
+  

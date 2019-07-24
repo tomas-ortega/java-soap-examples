@@ -1,21 +1,27 @@
 package com.java.tutorial;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
-@XmlRootElement
+@XmlRootElement(name = "ClientDTO")
 public class ClientDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@XmlElement(name = "id")
+	@XmlElement(name = "id", required = true)
 	private Integer clientId;
 	
-	@XmlElement(name = "name")
+	@XmlElement(name = "name", required = true)
 	private String clientName;
+	
+	@XmlElement(name = "registerDate", required = false)
+	//@XmlJavaTypeAdapter(AdapterDate.class)
+	private LocalDate registerDate;
 	
 	public ClientDTO() {
 		this.clientId = null;
@@ -38,5 +44,14 @@ public class ClientDTO implements Serializable {
 	@XmlTransient
 	public String getName() {
 		return this.clientName;
+	}
+	
+	@XmlTransient
+	public LocalDate getRegisterDate() {
+		return this.registerDate;
+	}
+	
+	public void setRegisterDate(LocalDate currentRegisterDate) {
+		this.registerDate = currentRegisterDate;
 	}
 }

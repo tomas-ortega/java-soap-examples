@@ -7,5 +7,5 @@ import com.java.tutorial.ClientDTO;
  *
  */
 public interface IClient {
-   ClientDTO createNewClient(Integer id, String name) throws Exception;
+   ClientDTO createNewClient(Integer id, String name, String registerDate) throws Exception;
 }
